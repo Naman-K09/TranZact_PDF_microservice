@@ -9,7 +9,7 @@ Roll no: 23BEC073
 
 ## Initial Understanding :
 The core objective is to build an independent PDF generation microservice that scales for sudden traffic spikes without requiring a re-architecture of the primary monolithic Django application.
-The primary difficulty lies in balancing extreme resource demands with a strict financial constraint. Puppeteer is highly memory-intensive, consuming ~400MB per render. Attempting to instantaneously process the peak load of up to 1000 single requests and 10 bulk requests (up to 100 PDFs each) per minute will immediately cause Out of Memory (OOM) crashes, especially when parsing dynamic tables with 500+ rows. Designing a system that gracefully throttles this massive RAM requirement while keeping total monthly infrastructure costs under ₹12,500 (~$150 USD) is the central architectural challenge.
+The primary difficulty lies in balancing extreme resource demands with a strict financial constraint. Puppeteer is highly memory-intensive, consuming 400MB per render. Attempting to instantaneously process the peak load of up to 1000 single requests and 10 bulk requests (up to 100 PDFs each) per minute will immediately cause Out of Memory (OOM) crashes, especially when parsing dynamic tables with 500+ rows. Designing a system that gracefully throttles this massive RAM requirement while keeping total monthly infrastructure costs under ₹12,500 ($150 USD) is the central architectural challenge.
 
 ## Assumptions :
 The monolithic Django application can transmit the complete, finalized data state for all required invoices within the initial JSON payload.
