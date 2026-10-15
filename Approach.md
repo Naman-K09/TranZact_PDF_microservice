@@ -120,6 +120,8 @@ Trade-off: More complex to set up key management, but any standard PDF viewer (l
 
 -----------------------------------------------------------------------------------------------------------------------
 
+## AI CHAT LOG : https://share.gemini.google/ZbXs3h6cAlIp
+
 ## Weaknesses & Future Improvements :
 Weakest part: Relying on the primary ERP's existing Redis instance for mission-critical queuing. If the monolith crashes Redis, all bulk PDF generation states are permanently lost.
 
@@ -137,6 +139,5 @@ S3 Standard pricing ($0.023 per GB) = ~$0.69
 Data Transfer (Outbound Internet): 30 GB bandwidth out = ~$3.00Database & Cache: $0.00 (Leveraging the existing PostgreSQL RDS and Redis instances per requirements).   
 Total Monthly Cost Estimate: ~$63.69 USDThis provides a ~57% buffer against the $150 limit, allowing for auto-scaling an additional worker node during sustained peak events if necessary
 
-## AI CHAT LOG : https://share.gemini.google/ZbXs3h6cAlIp
 
 ---------------------------------------------------------------Thank You----------------------------------------------------------------
